@@ -6,7 +6,6 @@ class Project:
         self.score = score
         self.bestBefore = bestBefore
 
-p = Project()
 '''
 rolls dict
 projectNames string
