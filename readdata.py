@@ -1,4 +1,8 @@
+import people
+
+
 def read_data(file_route):
+
     people_dict = {}
     project_dict = {}
 
@@ -30,7 +34,17 @@ def read_data(file_route):
     return people_dict, project_dict
 
 
+def convert_to_class(people_dict):
+    people_class_list = []
+    for k, v in people_dict.items():
+        people_class_list.append(people.People(k, v))
+    return people_class_list
+
+
 if __name__ == '__main__':
     ppl, prl = read_data(r"./input_data/a_an_example.in.txt")
+    pcl = convert_to_class(ppl)
     print(ppl)
     print(prl)
+    print(pcl.__str__())
+    print(pcl[0].skills)
